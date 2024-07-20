@@ -8,26 +8,20 @@
 
 <body>
   <button onclick="
-    console.log(`Cart quantity: ${cartQuantity}`);
+    displayCartQuantity();
       ">Show Quantity</button>
 
+
   <button onclick="
-  if(cartQuantity+1 > 10){
-      alert('The cart is full')
-  }else{
-    cartQuantity = cartQuantity+1;
-    console.log(`Cart quantity: ${cartQuantity}`);
-  }
 
+  updateCartQuantity(1);
 
-
-    
   ">Add to Cart</button>
 
   <button onclick="
 
-cartQuantity = cartQuantity-1;
-console.log(`Cart quantity: ${cartQuantity}`);
+    updateCartQuantity(-1);
+
 ">Remove from cart</button>
 
   <button onclick="
@@ -59,10 +53,13 @@ console.log(`Cart quantity: ${cartQuantity}`);
   <button onclick=" 
   cartQuantity = 0;
   console.log('cart is Reset');
-  console.log(`Cart quantity: ${cartQuantity}`);
+  
+  displayCartQuantity();
   
   
   ">Reset cart</button>
+
+  <p class="js-cart-quantity"></p>
 
   <script>
     let cartQuantity = 0;
@@ -79,9 +76,14 @@ console.log(`Cart quantity: ${cartQuantity}`);
       }
         cartQuantity = cartQuantity + change;
         console.log(`Cart quantity: ${cartQuantity}`);
+        displayCartQuantity();
     
 
 
+    }
+
+    function displayCartQuantity(){
+      document.querySelector('p').innerHTML = `Cart quantity: ${cartQuantity} `;
     }
 
   </script>

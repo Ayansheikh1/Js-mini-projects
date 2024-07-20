@@ -5,6 +5,8 @@
   <title>Calculator</title>
 </head>
 <body>
+
+  <p class="js-calculation"></p>
   <p>
     <button onclick="
     updateCalculation('1');
@@ -74,7 +76,7 @@
 <button onclick="
 eval(calculation);//only use as learning purpose it takes string and run it as a code
 calculation = eval(calculation);
-console.log(calculation);
+displayCalculation();
 ">=</button>
 
   <button onclick="
@@ -83,17 +85,36 @@ console.log(calculation);
   ">/</button>
 
   </p>
+  <p>
+    <button onclick="
+      calculation='';
+      displayCalculation();
+      
+      localStorage.setItem('calculation',calculation);
+      
+      
+      ">Clear</button>
+  </p>
+ 
   
  
 
   <script>
     let calculation = localStorage.getItem('calculation') || '';
+
+    displayCalculation();
+
     function updateCalculation(value){
       calculation += value;
-      console.log(calculation);
+      
+      displayCalculation();
       //save the calculation
       localStorage.setItem('calculation',calculation);
 
+    }
+
+    function displayCalculation(){
+      document.querySelector('.js-calculation').innerHTML = calculation;
     }
     
    
