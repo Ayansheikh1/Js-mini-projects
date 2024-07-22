@@ -3,41 +3,7 @@
 <head>
   
   <title>Calculator</title>
-  <style>
-    body{
-      background-color: black;
-      font-family: arial;
-    }
-
-    .calculation{
-      color: white;
-      font-size:45px;
-      margin-top:15px;
-      margin-bottom: 5px;
-    }
-
-    .calculation-button{
-     
-      color:white;
-      border:none;
-      height:60px;
-      width:60px;
-      border-radius: 60px;
-      margin-right: 5px;
-      font-size:26px;
-    }
-    .grey-button{
-      background-color: rgb(51, 51, 51);
-    }
-    .orange-button{
-      background-color: orange;
-    }
-    .clear-button{
-      background-color: rgb(51, 51, 51);
-      font-size:17px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="calculator.css">
 
 </head>
 <body>
@@ -135,26 +101,6 @@ displayCalculation();
   
  
 
-  <script>
-    let calculation = localStorage.getItem('calculation') || '';
-
-    displayCalculation();
-
-    function updateCalculation(value){
-      calculation += value;
-      
-      displayCalculation();
-      //save the calculation
-      localStorage.setItem('calculation',calculation);
-
-    }
-
-    function displayCalculation(){
-      document.querySelector('.js-calculation').innerHTML = calculation;
-    }
-    
-   
-    
-  </script>
+  <script src="calculator.js"></script>
 </body>
 </html>
