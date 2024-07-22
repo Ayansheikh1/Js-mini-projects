@@ -3,86 +3,122 @@
 <head>
   
   <title>Calculator</title>
+  <style>
+    body{
+      background-color: black;
+      font-family: arial;
+    }
+
+    .calculation{
+      color: white;
+      font-size:45px;
+      margin-top:15px;
+      margin-bottom: 5px;
+    }
+
+    .calculation-button{
+     
+      color:white;
+      border:none;
+      height:60px;
+      width:60px;
+      border-radius: 60px;
+      margin-right: 5px;
+      font-size:26px;
+    }
+    .grey-button{
+      background-color: rgb(51, 51, 51);
+    }
+    .orange-button{
+      background-color: orange;
+    }
+    .clear-button{
+      background-color: rgb(51, 51, 51);
+      font-size:17px;
+    }
+
+  </style>
+
 </head>
 <body>
 
-  <p class="js-calculation"></p>
+  <p class="js-calculation calculation"></p>
   <p>
     <button onclick="
     updateCalculation('1');
-   ">1</button>
+   " class="calculation-button grey-button">1</button>
 
   <button onclick="
  updateCalculation('2');
-  ">2</button>
+  " class="calculation-button grey-button">2</button>
 
   <button onclick="
  updateCalculation('3');
-  ">3</button>
+  "class="calculation-button grey-button">3</button>
 
   <button onclick="
   updateCalculation('+');
-  ">+</button>
+  " class="calculation-button orange-button">+</button>
 
   </p>
 
   <p>
     <button onclick="
    updateCalculation('4');
-    ">4</button>
+    "class="calculation-button grey-button">4</button>
 
   <button onclick="
  updateCalculation('5');
-  ">5</button>
+  "class="calculation-button grey-button">5</button>
 
   <button onclick="
   updateCalculation('6');
-  ">6</button>
+  "class="calculation-button grey-button">6</button>
 
   <button onclick="
   updateCalculation('-');
-  ">-</button>
+  " class="calculation-button orange-button">-</button>
 
   </p>
 
   <p>
     <button onclick="
     updateCalculation('7');
-    ">7</button>
+    "class="calculation-button grey-button">7</button>
 
   <button onclick="
  updateCalculation('8');
-  ">8</button>
+  "class="calculation-button grey-button">8</button>
 
   <button onclick="
  updateCalculation('9');
-  ">9</button>
+  "class="calculation-button grey-button">9</button>
 
   <button onclick="
  updateCalculation('*');
-  ">*</button>
+  " class="calculation-button orange-button">*</button>
 
   </p>
 
   <p>
     <button onclick="
     updateCalculation('0');
-    ">0</button>
+    "class="calculation-button grey-button">0</button>
 
   <button onclick="
   updateCalculation('.');
-  ">.</button>
+  "class="calculation-button grey-button">.</button>
 
 <button onclick="
 eval(calculation);//only use as learning purpose it takes string and run it as a code
 calculation = eval(calculation);
 displayCalculation();
-">=</button>
+" class="calculation-button grey-button">=</button>
 
   <button onclick="
   calculation += '/';
   console.log(calculation);
-  ">/</button>
+  "  class="calculation-button orange-button">/</button>
 
   </p>
   <p>
@@ -93,7 +129,7 @@ displayCalculation();
       localStorage.setItem('calculation',calculation);
       
       
-      ">Clear</button>
+      " class="calculation-button clear-button">Clear</button>
   </p>
  
   
