@@ -33,7 +33,8 @@ body{
   margin-top: 60px;
 }
 .reset-button,
-.auto-play-button{
+.auto-play-button,
+.reset-confirm-button{
   background-color: white;
   font-size:15px;
   border: none;
