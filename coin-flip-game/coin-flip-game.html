@@ -5,65 +5,14 @@
   <title>Coin-flip game</title>
 </head>
 <body>
-  <button onclick="
-    playGame('heads');
-    
-    
-    ">heads</button>
+  <button class="heads-button">heads</button>
 
-  <button onclick="
-  playGame('tails');
-  
-  ">tails</button>
-
-
-
- <script>
- 
-
- const score = JSON.parse(localStorage.getItem('score')) || {
-  wins: 0,
-  losses: 0
-};
-
-
-
-  function playGame(guess){
-  
-const randomNumber = Math.random();
-
-  let result = '';
-if(randomNumber<0.5){
-result = 'heads';
-}
-else{
-result = 'tails';
-}
-
-
-  if(guess === result){
-  console.log('You win!');
-  score.wins+= 1;
-  }
-  else if(guess !== result){
-  console.log('You lose!');
-  score.losses+=1;
-  }
-  console.log(score);
-  console.log(randomNumber);
-
-  localStorage.setItem('score' , JSON.stringify(score));
-
-  
-}
+  <button class="tails-button">tails</button>
 
 
 
 
-
-
-
- </script>
+ <script src="coin-flip-game.js"></script>
 
 </body>
 </html>
