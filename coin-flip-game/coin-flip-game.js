@@ -17,21 +17,31 @@ else{
 result = 'tails';
 }
 
-
+let resultHTML = '';
   if(guess === result){
-  alert('You win!');
+    resultHTML ='You win!';
+  
   score.wins+= 1;
   }
   else if(guess !== result){
-  alert('You lose!');
+    resultHTML ='You lose!';
   score.losses+=1;
   }
-  console.log(score);
+  resultHTML += JSON.stringify(score);
   
 
   localStorage.setItem('score' , JSON.stringify(score));
 
+  document.querySelector('.js-result').innerHTML = resultHTML;
+
   
+}
+
+function reset(){
+return score= {
+  wins: 0,
+  loses: 0
+};
 }
 
 
@@ -41,4 +51,8 @@ document.querySelector('.heads-button').addEventListener('click', () => {
 
 document.querySelector('.tails-button').addEventListener('click', () => {
   playGame('tails');
+});
+
+document.querySelector('js-reset-button').addEventListener('click', () => {
+  reset();
 });
