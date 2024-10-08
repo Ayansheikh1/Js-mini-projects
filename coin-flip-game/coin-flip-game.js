@@ -1,4 +1,4 @@
-const score = JSON.parse(localStorage.getItem('score')) || {
+let score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   losses: 0
 };
@@ -40,7 +40,7 @@ let resultHTML = '';
 function reset(){
 return score= {
   wins: 0,
-  loses: 0
+  losses: 0
 };
 }
 
@@ -53,6 +53,6 @@ document.querySelector('.tails-button').addEventListener('click', () => {
   playGame('tails');
 });
 
-document.querySelector('js-reset-button').addEventListener('click', () => {
+document.querySelector('.js-reset-button').addEventListener('click', () => {
   reset();
 });
