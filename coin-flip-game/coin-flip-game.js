@@ -44,6 +44,8 @@ score= {
   losses: 0
 };
 
+localStorage.setItem('score' , JSON.stringify(score));
+
 resultHTML = JSON.stringify(score);
   document.querySelector('.js-result').innerHTML = resultHTML;
 }
