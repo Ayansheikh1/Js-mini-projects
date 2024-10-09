@@ -4,7 +4,7 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 };
 
 
-
+let resultHTML = '';
   function playGame(guess){
   
 const randomNumber = Math.random();
@@ -17,7 +17,7 @@ else{
 result = 'tails';
 }
 
-let resultHTML = '';
+
   if(guess === result){
     resultHTML ='You win!';
   
@@ -38,10 +38,14 @@ let resultHTML = '';
 }
 
 function reset(){
-return score= {
+  
+score= {
   wins: 0,
   losses: 0
 };
+
+resultHTML = JSON.stringify(score);
+  document.querySelector('.js-result').innerHTML = resultHTML;
 }
 
 
