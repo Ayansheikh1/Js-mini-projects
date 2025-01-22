@@ -2,8 +2,13 @@ body{
   background-color: rgb(25,25,25);
   color: white;
   font-family: arial;
+  
 }
+.container{
+  display: flex;
+  flex-direction: column;
 
+}
 .title{
   font-size: 30px;
   font-weight: bold;
